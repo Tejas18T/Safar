@@ -1,0 +1,34 @@
+package com.Safar.Entity;
+
+import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
+public class Tours {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer tour_id;
+	
+	@Column(name="start_date")
+	private Date start_date;
+	
+	@Column(name="end_date")
+	private Date end_date;
+	
+	@Column(name="tour_status")
+	private String tour_status;
+	
+	@JsonIgnoreProperties("trip")
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="packageid")
+	Trips_Package packageid;
+}

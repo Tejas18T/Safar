@@ -1,0 +1,31 @@
+package com.Safar.Repository;
+
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.Safar.Entity.Users;
+
+
+@Repository
+@Tra
+public interface User_Repository extends JpaRepository<Users, Integer>{
+
+	
+   @Query("SELECT count(*) from Users where Username =:username and Password=:pwd and Role_Id=:role and Account_Status=1")
+   public int findByUsernameAndPassword(String username,String pwd,int role);
+   
+   @Query("SELECT count(*) from Users where Username =:username")
+   public int findByUsername(String username);
+   
+   @Query("SELECT count(*) from Users where Username =:username and Email=:email and Contact_No=:contact and Account_Status=1")
+   public int findByEmail(String username,String email,String contact);
+	
+    @Modifying
+	@Query("update Patient set Password=:pwd where Username =:username")
+	public int updatepassword(String username,String pwd);
+	 	
+
+}

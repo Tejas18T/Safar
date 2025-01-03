@@ -1,0 +1,19 @@
+package com.Safar.Entity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+public class Role {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer Role_Id;
+	
+	@Column
+	private String Role_name;
+	
+	@Column
+	private String Desc;
+}

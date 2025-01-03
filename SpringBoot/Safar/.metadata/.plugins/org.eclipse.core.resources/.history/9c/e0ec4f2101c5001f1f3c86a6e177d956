@@ -1,0 +1,51 @@
+package com.Safar.Entity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Entity
+@Table(name="Package")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
+public class Trips_Package {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int package_Id;
+	
+	@Column
+	private int company_Id;
+	
+	@Column(name="Description",columnDefinition = "TEXT")
+	private String description;
+	
+	@Column
+	private String source;
+	
+	@Column
+	private String destination;
+	
+	@Column
+	private int tourist_allowed;
+	
+	@Column
+	private float person_per_package;
+	
+	@Column
+	private String image_desc;
+	
+	
+	
+}

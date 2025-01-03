@@ -1,0 +1,5 @@
+package com.Safar.Repository;
+
+public interface Role_Repository {
+
+}

@@ -1,0 +1,14 @@
+package com.Safar.Entity;
+
+public class DumyUser {
+
+	private String username;
+	
+	private String password;
+	
+	private String contactno;
+	
+	private String email;
+	
+	private String address;
+}

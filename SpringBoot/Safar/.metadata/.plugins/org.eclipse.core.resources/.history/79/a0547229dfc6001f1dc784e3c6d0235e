@@ -1,0 +1,24 @@
+package com.Safar.Controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.Safar.Entity.Company;
+import com.Safar.Entity.Role;
+import com.Safar.Service.Company_Service;
+
+@RestController
+public class CompanyController {
+	
+	@Autowired
+	Company_Service ComSer;
+	
+	@GetMapping("/getallCompnies")
+	public List<Company> getAllRoles(){
+		return ComSer.getallCompany();
+	}
+
+}

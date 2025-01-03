@@ -1,0 +1,24 @@
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.Safar.Entity.Role;
+import com.Safar.Repository.Role_Repository;
+
+
+@Service
+public class RoleService {
+
+	@Autowired
+	Role_Repository Rele_repo;
+	
+	
+	public List<Role> getAllRole(){
+		return Rele_repo.findAll();
+	}
+	
+	public Optional<Role> getOne(int id){
+		return Rele_repo.findById(id);
+	}
+}

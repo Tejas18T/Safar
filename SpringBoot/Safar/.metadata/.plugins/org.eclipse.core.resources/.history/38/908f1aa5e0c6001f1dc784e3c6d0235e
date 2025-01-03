@@ -1,0 +1,20 @@
+package com.Safar.Service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.Safar.Entity.Company;
+import com.Safar.Repository.CompanyRepository;
+
+@Service
+public class Company_Service {
+
+	@Autowired
+	CompanyRepository ComRepo;
+	
+	public List<Company> getallCompany(){
+		return ComRepo.findAll();
+	}
+}
